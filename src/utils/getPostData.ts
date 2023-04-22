@@ -2,7 +2,7 @@ import readingTime from "reading-time";
 
 type Post = {
   title: string;
-  file: string;
+  file: string; 
   rawContent: () => string;
 };
 

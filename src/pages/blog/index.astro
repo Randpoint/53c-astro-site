@@ -1,11 +1,10 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-
 const title = "Blog";
 const description = "Latest articles.";
 const permalink = `${Astro.site.href}blog`;
 
-let allPosts = await Astro.glob("../../data/blog-posts/*.md");
+let allPosts = await Astro.glob("../../data/blogposts/*.md");
 allPosts = allPosts.sort(
   (a, b) =>
     new Date(b.frontmatter.publishDate).valueOf() -
@@ -44,22 +43,3 @@ allPosts = allPosts.sort(
     }
   </div>
 </BaseLayout>
-
-<style>
-  h2,
-  .post-item-footer {
-    font-family: var(--font-family-sans);
-    font-weight: 700;
-  }
-
-  .post-item-date {
-    color: var(--text-secondary);
-    text-align: left;
-    text-transform: uppercase;
-    margin-right: 16px;
-  }
-
-  hr {
-    margin: 60px auto;
-  }
-</style>
