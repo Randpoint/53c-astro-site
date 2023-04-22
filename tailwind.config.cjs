@@ -86,22 +86,22 @@ module.exports = {
     },
     extend: {
       backgroundImage: (theme) => ({
-        screens: "url('/path-to/image.png')",
+        screens: "url('logo.png')",
       }),
       colors: {
         black: "#141521",
        
         accent: {
          50: "#EBEDFF",
-      100: "#D6DAFF",
-      200: "#A8B1FF",
-      300: "#808CFF",
-      400: "#5263FF",
-      500: "#283CFF",
-      600: "#0017EB",
-      700: "#0012B3",
-      800: "#000C75",
-      900: "#00063D"
+          100: "#D6DAFF",
+          200: "#A8B1FF",
+          300: "#808CFF",
+          400: "#5263FF",
+          500: "#283CFF",
+          600: "#0017EB",
+          700: "#0012B3",
+          800: "#000C75",
+          900: "#00063D"
         },
       },
       fontFamily: {

@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from 'astro:content';
+const title = "Blog";
+const description = "Latest articles.";
+const permalink = `${Astro.site.href}blog`;
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
+);
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  permalink={permalink}
+  current="blog"
+>
+<main>
+  <div id="head">
+    <h1>The Eludris Blog Index</h1>
+    <p>
+      A place where you can find all our blogs be it development updates or just plain
+      shitposting.
+    </p>
+  </div>
+  <hr id="sep" />
+  <div id="posts">
+    {
+      posts.map(
+        (post) =>
+          !post.data.hide && (
+            <a href={`/blog/${post.slug}`} class="post-anchor">
+              <div class="post">
+                <h2>
+                  <time datetime={post.data.pubDate} style="font-weight: 300;">
+                    {new Date(post.data.pubDate).toLocaleDateString('en-uk', {
+                      year: 'numeric',
+                      month: 'short',
+                      day: 'numeric'
+                    })}{' '}
+                  </time>{' '}
+                  <span style="font-weight: 300;">-</span> {post.data.title}
+                </h2>
+                <br />
+                <p class="post-description">{post.data.description}</p>
+              </div>
+            </a>
+          )
+      )
+    }
+  </div>
+</main>
+</BaseLayout>
