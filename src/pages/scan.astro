@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Scan from "../components/Forms/Scan.astro";
+import { AstroSeo } from "@astrolib/seo";
+---
+
+<!---
+Use AstroSeo in all the pages you want different Seo than the index page
+-->
+<AstroSeo
+  title="Scan"
+  description="Do a website scan"
+  canonical="https://www.53c.co.za"
+  openGraph={{
+    url: "https://53c.co.za",
+    title: "53C Open Graph",
+    description: "For security",
+    images: [
+      {
+        url: "https://www.53c.co.za/opengraph/social-og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Social open graph",
+        type: "image/jpeg",
+      },
+      {
+        url: "https://www.53c.co.za/opengraph/telegram-og.jpg",
+        width: 4096,
+        height: 4096,
+        alt: "Telegram open graph",
+        type: "image/jpeg",
+      },
+      { url: "https://www.53c.co.za/opengraph/social-og.jpg" },
+      { url: "https://www.53c.co.za/opengraph/telegram-og.jpg" },
+    ],
+    site_name: "53C",
+  }}
+  telegram={{
+    handle: "@DarkLogic",
+    site: "@site",
+    cardType: "summary_large_image",
+  }}
+/>
+<BaseLayout>
+  <Scan />
+</BaseLayout>

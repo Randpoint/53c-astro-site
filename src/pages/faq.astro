@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navigation from "../components/global/Navigation.astro";
+import Faq from "../components/infopages/Faq.astro";
+import Footer from "../components/global/Footer.astro";
+import { AstroSeo } from "@astrolib/seo";
+---
+
+<!---
+Use AstroSeo in all the pages you want different Seo than the index page
+-->
+<AstroSeo
+  title="FAQ"
+  description="Frequently asked questions"
+  canonical="https://www.53c.co.za"
+  openGraph={{
+    url: "https://www.53c.co.za",
+    title: "SecGraph",
+    description: "SecGraph",
+    images: [
+      {
+        url: "https://www.53c.co.za/opengraph/social-og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Social open graph",
+        type: "image/jpeg",
+      },
+      {
+        url: "https://www.53c.co.za/opengraph/telegram-og.jpg",
+        width: 4096,
+        height: 4096,
+        alt: "Telegram open graph",
+        type: "image/jpeg",
+      },
+      { url: "https://www.53c.co.za/opengraph/social-og.jpg" },
+      { url: "https://www.53c.co.za/opengraph/telegram-og.jpg" },
+    ],
+    site_name: "YourSitesName",
+  }}
+  telegram={{
+    handle: "@darklogic",
+    site: "@site",
+    cardType: "summary_large_image",
+  }}
+/>
+<BaseLayout>
+  <Navigation />
+  <Faq />
+  <Footer/>
+</BaseLayout>

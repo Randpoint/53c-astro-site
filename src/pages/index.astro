@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navigation from "../components/global/Navigation.astro";
+
+import Hero from "../components/landing/Hero.astro";
+import Contact from "../components/landing/Contact.astro";
+import About from "../components/landing/About.astro";
+import Services from "../components/landing/Services.astro";
+import Testimonial from "../components/global/Testimonial.astro";
+import Pricing from "../components/landing/Pricing.astro";
+import Cta from "../components/global/Cta.astro";
+import Trust from "../components/landing/Trust.astro";
+import Footer from "../components/global/Footer.astro";
+import { AstroSeo } from "@astrolib/seo";
+---
+
+<!---
+Use AstroSeo in all the pages you want different Seo than the index page
+-->
+<AstroSeo
+  title="53C"
+  description="53C Information Security Company Website"
+  canonical="https://www.53c.co.za"
+  openGraph={{
+    url: "https://www.53c.co.za",
+    title: "53C",
+    description: "Stay connected. Be protected.",
+    site_name: "53C",
+  }}
+/>
+<BaseLayout>
+  <Navigation />
+  <Hero />
+  <About />
+  <Services />
+  <Trust />
+  <Pricing />
+  <Contact />
+  <Footer />
+</BaseLayout>
