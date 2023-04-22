@@ -3,10 +3,10 @@ import tailwind from "@astrojs/tailwind";
 import image from "@astrojs/image";
 import compress from "astro-compress";
 import partytown from "@astrojs/partytown";
-import sitemap from "@astrojs/sitemap",
-import sharp from "@astrojs/sharp";
+import sharp from 'sharp';
+
 
 export default defineConfig({
-   site: 'https://53c.co.za',
-  integrations: [tailwind(), image(), compress(), partytown(), sitemap(), sharp()]
+  site: 'https://53c.co.za/',
+  integrations: [tailwind(), image(), compress(), partytown(), sharp()]
 });
